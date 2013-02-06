@@ -7,10 +7,14 @@
 ;; think of the incoming list as the indices of a set of resources that are currently being 
 ;; used, and you're returning the smallest index of an unused resource.
 
-
-
-
-
+(defn minfree [list]
+  (loop [coll list n 0]
+    (if (contains? coll n)
+      (recur coll (inc n))
+      n
+      )
+    )
+  )
 
 
 (is (= 0 (minfree #{})))

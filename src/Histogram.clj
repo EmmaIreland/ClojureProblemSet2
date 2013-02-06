@@ -5,11 +5,9 @@
 ;; Write a function histogram that takes in a string and returns a map whose keys are characters 
 ;; and values are the number of occurrences of that character in the given string.
 
-
-
-
-
-
+(defn build-histogram [string]
+  (frequencies (map #(first %) (map vector string)))
+  )
 
 
 (is (= {}
